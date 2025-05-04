@@ -1,0 +1,58 @@
+Dashboard Instructions: Marketing Campaign Performance
+
+This document guides you on creating a basic marketing performance dashboard using the cleaned dataset (`marketing_campaign_data_cleaned.csv`) in Power BI.
+
+** Dataset: `marketing_campaign_data_cleaned.csv`
+
+---
+ Power BI Dashboard
+---
+
+1.  **Get Data:
+    * Open Power BI Desktop.
+    * Click `Get Data` on the Home ribbon.
+    * Select `Text/CSV`.
+    * Browse to and select `marketing_campaign_data_cleaned.csv`.
+    * Click `Load`. (Power BI often detects data types well, but it's good practice to check in the next step).
+
+2.  **Transform Data (Optional but Recommended):
+    * Click `Transform data` on the Home ribbon to open Power Query Editor.
+    * Check Data Types: Ensure `Date` is Date type, numerical columns (Impressions, Clicks, Cost, Revenue, Profit, CTR (%), CPC, Conversion Rate (%), ROI (%)) are Decimal Number or Whole Number as appropriate, and text columns (Channel, Region, Campaign_ID) are Text type. Adjust if necessary.
+    * Check for any remaining errors or inconsistencies.
+    * Click `Close & Apply`.
+
+3.  **Build Visualizations:
+
+    * **a) KPIs (Key Performance Indicators):
+        * Use `Card` visuals (from the Visualizations pane).
+        * Drag `Revenue` to the Fields area of the first Card. Click the dropdown on the field and select `Sum`. Title it "Total Revenue". Format as currency.
+        * Create another Card. Drag `CTR (%)` to the Fields area. Select `Average`. Title it "Avg. CTR". Format as percentage.
+        * Create another Card. Drag `ROI (%)` to the Fields area. Select `Average`. Title it "Avg. ROI". Format as percentage.
+        * Create another Card. Drag `Cost` to the Fields area. Select `Sum`. Title it "Total Cost". Format as currency.
+
+    * **b) Channel Performance:
+        * Use a `Clustered bar chart` or `Clustered column chart`.
+        * Axis/Y-axis: Drag `Channel`.
+        * Values/X-axis: Drag `Revenue` (Sum), `CTR (%)` (Average), `ROI (%)` (Average). You might want separate charts for clarity or use tooltips. A common approach is one chart for Revenue/Cost and another for Rates (CTR/ROI).
+        * Example: Bar chart with `Channel` on Y-axis and `Sum of Revenue` on X-axis.
+
+    * **c) Region-wise Map:
+        * Use a `Map` visual (the basic one or Filled Map).
+        * Location: Drag `Region`.
+        * Bubble size / Color saturation: Drag `Revenue` (Sum) or `ROI (%)` (Average). Adjust aggregation as needed.
+
+    * **d) Time-series Performance:
+        * Use a `Line chart`.
+        * Axis: Drag `Date`. Power BI will create a hierarchy (Year, Quarter, Month, Day). You can use this or just the Date field. Drill down to Month level for a monthly trend.
+        * Values: Drag `Revenue` (Sum) and `Cost` (Sum).
+
+    * **e) Slicers (Filters):
+        * Use `Slicer` visuals.
+        * Create slicers for `Channel`, `Region`, and `Date` (use the 'Between' setting for date range).
+
+4.  **Arrange and Format:
+    * Arrange the visuals logically on the canvas.
+    * Apply formatting (titles, colors, labels) for readability and aesthetic appeal.
+    * Save your Power BI report (.pbix file).
+
+-----
