@@ -34,17 +34,6 @@ The final cleaned and enriched dataset used for dashboarding is `marketing_campa
 * **Jupyter Notebook:** For interactive analysis and code development.
 * **Power BI / Microsoft Excel:** For creating the interactive dashboard.
 
-## Project Structure
-marketing-campaign-dashboard/
-│
-├── marketing_campaign_data_raw.csv       # Raw synthetic dataset
-├── marketing_campaign_data_cleaned.csv   # Cleaned data for dashboarding
-├── marketing_analysis.ipynb              # Jupyter Notebook with Python code for analysis
-│   (or marketing_analysis.py)            # Alternative Python script version
-├── Dashboard_Instructions.txt            # Guide to create the dashboard in Power BI/Excel
-├── README.md                             # This file
-└──  Marketing_Dashboard.pbix   # Example Power BI file 
-
 ## How to Run
 
 1.  **Generate Data:** Run the initial Python code block (in `marketing_analysis.ipynb` or a separate script) to generate `marketing_campaign_data_raw.csv`.
